@@ -89,7 +89,6 @@
                 </clipPath>
                 </defs>
             </svg>
-
         </div>
         <button class="button">перейти на сайт игры</button>
         <div class="wrapper">
@@ -98,6 +97,8 @@
                 <p class="review__user">{{item.user}}</p>
             </div>
         </div>
+        <img src="../assets/logo.png" alt="">
+
     </header>
 </template>
 <script>
@@ -117,5 +118,9 @@ export default {
             ]
         }
     },
+
+    computed:{
+
+    }
 }
 </script>

@@ -1,4 +1,5 @@
 @import './fonts.scss';
+@import './animations.scss';
 
 *{
     margin: 0;
@@ -21,9 +22,26 @@ header{
     background: #171B1C;
     border: 1px solid #303131;
     border-radius: 20px;
+    position: relative;
 
-   
+    img{
+        position: absolute;
+        top: 60px;
+        right: 90px;
+        animation: staticImage 3s infinite;
+
+    }
+    svg{
+        animation: static 3s infinite;
+    }
 }
+.center{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
 
 .intro{
     border: 1px solid #303131;
@@ -72,9 +90,47 @@ header{
     text-transform: uppercase;
     color: #FFFFFF;
     background: #FC8600;
+    border: none;
     border-radius: 10px;
     padding: 13px 61px;
     cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+
+    &:after {
+        content: "";
+        height: 200%;
+        left: -230%;
+        opacity: 0;
+        position: absolute;
+        top: -20%;
+        transform: rotate(-30deg);
+        width: 200%;
+        background: rgba(255, 255, 255, 0.13);
+        background: linear-gradient(
+          to right, 
+          rgba(255, 255, 255, 0.13) 0%,
+          rgba(255, 255, 255, 0.13) 77%,
+          rgba(255, 255, 255, 0.5) 92%,
+          rgba(255, 255, 255, 0.0) 100%
+    );
+    }
+    &:hover{
+        background: #e97c00;
+
+    }
+    &:hover:after {
+        left: -50%;
+        opacity: 1;
+        top: -50%;
+        transition-duration: 0.7s, 0.7s, 0.15s;
+        transition-property: left, top, opacity;
+        transition-timing-function: ease;
+    }
+    &:active:after {
+        opacity: 0;
+      }
 }
 
 .wrapper{
@@ -125,6 +181,8 @@ header{
         color: #303131;
         svg{
             margin-right: 13px;
+            animation: bunny 3s infinite;
+
         }
     }
     &__desc{
@@ -162,5 +220,200 @@ header{
         &:last-child{
             margin: 29px 0 0 0;
         }
+    }
+}
+
+
+
+@media screen and (max-width:1200px) {
+    .container{
+        max-width: 960px;
+    }
+
+    .box img{
+        width: 20%;
+        top: 40px;
+    }
+    .intro{
+        width: 100%;
+        svg{
+            display: none;
+        }
+    }
+    .wrapper{
+        flex-direction: row;
+    }
+    .review{
+        width: 49%;
+    }
+}
+
+@media screen and (max-width:992px) {
+    .container{
+        max-width: 720px;
+    }
+    .button{
+        width: 100%;
+    }
+    .wrapepr{
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .review{
+        max-width: 100%;
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    .intro__subtitle{
+        width: 70%;
+    }
+}
+@media screen and (max-width:768px) {
+    .container{
+        max-width: 540px;
+    }
+    .box{
+
+        img{
+            right: 70px;
+            width: 16%;
+        }
+    }
+    .intro{
+        box-sizing: border-box;
+        &__title{
+            font-size: 40px;
+        }
+        &__subtitle {
+            width: 100%;
+            font-size: 15px;
+            margin-bottom: 10px;
+        }
+        &__description{
+            font-size: 13px;
+        }
+    }
+    .review{
+        &__text{
+            font-size: 13px;
+        }
+        &__user{
+            font-size: 16px;
+        }
+    }
+
+    .plus{
+        margin-bottom: 20px;
+        &__title{
+            font-size: 20px;
+            margin-bottom: 15px;
+            line-height: normal;
+            svg{
+                width: 30px;
+            }
+        }
+        &__desc{
+            font-size: 13px;
+            max-width: 100%;
+        }
+    }
+    .findings{
+        padding: 30px 50px;
+        margin-bottom: 20px;
+        &__title{
+            font-size: 25px;
+            line-height: normal;
+        }
+        &__desc{
+            font-size: 13px;
+        }
+    }
+    #app{
+        padding: 40px 0 50px;
+    }
+}
+
+@media screen and (max-width:576px) {
+    .container{
+        max-width: 460px;
+    }
+    header{
+        padding: 20px;
+    }
+    .box{
+        margin-bottom: 20px;
+        img{
+            display: none;
+        }
+    }
+}
+@media screen and (max-width:480px) {
+    .container{
+        max-width: 350px;
+    }
+    .intro{
+        padding: 10px;
+        text-align: center;
+        &__title {
+            font-size: 30px;
+            line-height: normal;
+        }
+        &__subtitle {
+            font-size: 14px;
+            line-height: normal;
+        }
+        &__description {
+            font-size: 11px;
+        }
+    }
+    .review{
+        &__text{
+            font-size: 11px;
+        }
+        &__user{
+            font-size: 13px;
+        }
+    }
+    .button{
+        padding: 13px 0;
+        font-size: 14px;
+    }
+    .plus{
+        margin-bottom: 10px;
+        &:nth-child(3){
+            margin-bottom: 30px;
+        }
+        &__title{
+            font-size: 14px;
+            svg{
+                width: 15px;
+            }
+        }
+        &__desc{
+            font-size: 11px;
+            line-height: 19px;
+        }
+    }
+    .findings{
+        padding: 21px;
+        &__title{
+            font-size: 20px;
+        }
+        &__desc {
+            font-size: 11px;
+            margin-bottom: 15px;
+        }
+    }
+}
+@media screen and (max-width:375px) {
+    .container{
+        max-width: 300px;
+    }
+}
+
+@media screen and (max-width:320px) {
+    .container{
+        max-width:95%;
     }
 }

@@ -1,0 +1,53 @@
+@keyframes static {
+    0%{
+        transform: rotate(-5deg);
+    }
+    50%{
+        transform: rotate(5deg);
+    }
+    100%{
+        transform: rotate(-5deg);
+    }
+}
+
+@keyframes staticImage {
+    0%{
+        transform: rotate(-1deg);
+    }
+    50%{
+        transform: rotate(1deg);
+    }
+    100%{
+        transform: rotate(-1deg);
+    }
+}
+@keyframes bunny {
+    0%{
+        transform: translateY(0px);
+    }
+    50%{
+        transform: translateY(-10px);
+
+    }
+    100%{
+        transform: translateY(0px);
+
+    }
+}
+
+.fade-live-to{
+    opacity: 0;
+}
+.fade-enter{
+    opacity: 0;
+}
+.fade-enter-active{
+    transition: all .2s;
+    opacity: 1;
+}
+
+.fade-enter{
+  transform: translateX(50px);  
+  opacity: 0;
+}
+

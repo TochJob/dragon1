@@ -1,6 +1,8 @@
 <template>
   <div class="container">
-    <HeaderApp/>
+    <transition name="fade" appear>
+      <HeaderApp/>
+    </transition>
     <section>
       <plus-app v-for="(item, index) of plusesDesctiption" :key="index" :title="item.title" :text="item.text"/>
       <div class="findings box">
@@ -8,6 +10,9 @@
         <p class="findings__desc" v-for="(item,index) in boxDescriptions" :key="index">{{ item }}</p>
       </div>
       <plus-app title="Заключение" :text="endingText" :new-class="ending"/>
+      <div class="center">
+        <button class="button">перейти на сайт игры</button>
+      </div>
 
     </section>
     
