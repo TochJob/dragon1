@@ -84,6 +84,10 @@ header{
 }
 .button{
     font-family: 'Exo 2';
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-weight: 900;
     font-size: 20px;
     line-height: 26px;
@@ -91,12 +95,13 @@ header{
     color: #FFFFFF;
     background: #FC8600;
     border: none;
+    max-width: 370px;
     border-radius: 10px;
     padding: 13px 61px;
     cursor: pointer;
     position: relative;
     overflow: hidden;
-    display: inline-block;
+    // display: inline-block;
 
     &:after {
         content: "";
@@ -253,7 +258,7 @@ header{
         max-width: 720px;
     }
     .button{
-        width: 100%;
+        width: auto;
     }
     .wrapepr{
         flex-direction: column;
@@ -344,8 +349,14 @@ header{
     .box{
         margin-bottom: 20px;
         img{
-            display: none;
+            top: 30px;
+            left: 35%;
+            transform: translate(-50%, 0);
+            width: 33%;
         }
+    }
+    .intro{
+        padding-top: 150px;
     }
 }
 @media screen and (max-width:480px) {
@@ -353,7 +364,7 @@ header{
         max-width: 350px;
     }
     .intro{
-        padding: 10px;
+        // padding: 10px;
         text-align: center;
         &__title {
             font-size: 30px;
