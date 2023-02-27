@@ -416,6 +416,11 @@ header{
             margin-bottom: 15px;
         }
     }
+    .center{
+        .button{
+            width: 100%;;
+        }
+    }
 }
 @media screen and (max-width:375px) {
     .container{
